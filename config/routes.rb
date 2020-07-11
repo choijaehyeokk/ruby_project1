@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 	#'/'로 접속을 하면 home controller의 index action으로 작업을 하도록 만들어라.
 	get '/login' => 'login#login'
 	get '/contents' => 'contents#contents'
+	get '/signin' => 'home#signin'
 end

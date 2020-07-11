@@ -1,21 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>my service</title>
 		<%= csrf_meta_tags %>
-		<%= stylesheet_link_tag    'application', media: 'all'%>
+		<%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track'=> true %>
 	</head>
 	<body>
 		<h1>
 			<p style="text-align:center;"><%= @title%></p>
 		</h1>
-		<p>
+		<p>	
 			<p style="text-align:center;">항공대 학생들을 위한 개발 커뮤니티</p>
-			<p style="text-align:right;"><%= @login%>&nbsp<%= @signin%></p>
+			<p style="text-align:right;">
+				<button class="login">
+					<a href="/login"><%= @login%></a>
+				</button>
+				<button class="sigin">
+					<a href="/signin"><%= @signin%></a>
+				</button>
 		</p>
-		<hr color = "black" size = '3' noshape>
+			<hr color = "black" size = '3' noshape>
+			<div class="dropdown">
+				<button class="dropbtn">Menu</button>
+				  <div class="dropdown-content">
+					<a href="/">HOME</a>
+					<a href="/contents">Program Languages</a>
+					<a href="/contents">Chat</a>
+					<a href="/contents">Introduce</a>
+				  </div>
+			</div>
 
-	
 		<form id='search_bar' method="get">
 			<input type='text' name="search" />
 			<input type="submit" />

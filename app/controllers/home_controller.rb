@@ -4,5 +4,9 @@ class HomeController < ApplicationController
 		@title = "항개발"
 		@login ="로그인"
 		@signin= "회원가입"
+	end	
+	def login
+	end
+	def sigin
 	end
 end
