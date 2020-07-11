@@ -1,26 +1,32 @@
 <!doctype html>
 <html>
-	<h1>
-		<p style="text-align:center;"><%= @title%></p>
-	</h1>
-	<p>
-		<p style="text-align:center;">항공대 학생들을 위한 개발 커뮤니티</p>
-		<p style="text-align:right;"><%= @login%>&nbsp<%= @signin%></p>
-	</p>
-	<hr color = "black" size = '3' noshape>
-
+	<head>
+		<title>my service</title>
+		<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag    'application', media: 'all'%>
+	</head>
 	<body>
-		<form style="text-align:center" method="get">
+		<h1>
+			<p style="text-align:center;"><%= @title%></p>
+		</h1>
+		<p>
+			<p style="text-align:center;">항공대 학생들을 위한 개발 커뮤니티</p>
+			<p style="text-align:right;"><%= @login%>&nbsp<%= @signin%></p>
+		</p>
+		<hr color = "black" size = '3' noshape>
+
+	
+		<form id='search_bar' method="get">
 			<input type='text' name="search" />
 			<input type="submit" />
 		</form>
 
-		<div style="text-align:center">
-			<a href=/contents><img src="<%=asset_path 'python_logo.png'%>"/></a>
-			<a href=/contents><img src="<%=asset_path 'C_logo.png'%>"/></a>
-			<a href=/contents><img src="<%=asset_path 'Cpp_logo.png'%>"/></a>
-			<a href=/contents><img src="<%=asset_path 'java_logo.png'%>"/></a>
-			<a href=/contents><img src="<%=asset_path 'mathlab_logo.png'%>"/></a>
+		<div class="contents">
+			<a href=/contents><img class='logo_img' src="<%=asset_path 'python_logo.png'%>"/></a>
+			<a href=/contents><img class='logo_img' src="<%=asset_path 'C_logo.png'%>"/></a>
+			<a href=/contents><img class='logo_img' src="<%=asset_path 'Cpp_logo.png'%>"/></a>
+			<a href=/contents><img class='logo_img' src="<%=asset_path 'java_logo.png'%>"/></a>
+			<a href=/contents><img class='logo_img' src="<%=asset_path 'mathlab_logo.png'%>"/></a>
 		</div>
 		
 	</body>
