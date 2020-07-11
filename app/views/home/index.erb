@@ -1,13 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<head>
 	<h1>
 		<p style="text-align:center;"><%= @title%></p>
+		<%= stylesheet_link_tag		'application', media: 'all','data-turbolinks-track'=> true %>
 	</h1>
-	<p>
-		<p style="text-align:center;">항공대 학생들을 위한 개발 커뮤니티</p>
-		<p style="text-align:right;"><%= @login%>&nbsp<%= @signin%></p>
-	</p>
-	<hr color = "black" size = '3' noshape>
+	<body>
+		<p>	
+			<p style="text-align:center;">항공대 학생들을 위한 개발 커뮤니티</p>
+			<p style="text-align:right;">
+				<button class="login">
+					<a href="/login"><%= @login%></a>
+				</button>
+				<button class="sigin">
+					<a href="/signin"><%= @signin%></a>
+				</button>
+		</p>
+			<hr color = "black" size = '3' noshape>
+			<div class="dropdown">
+				<button class="dropbtn">Menu</button>
+				  <div class="dropdown-content">
+					<a href="/index">HOME</a>
+					<a href="/index">Program Languages</a>
+					<a href="/index">Chat</a>
+					<a href="/index">Introduce</a>
+				  </div>
+			</div>
+	</body>
+</head>	
 </html>
 
 
