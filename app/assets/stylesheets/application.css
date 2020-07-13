@@ -14,5 +14,8 @@
  *= require_self
  *= require home.css
  *= require contents.css
- *= require login.css
  */
+
+/*레일즈를 만들면 처음부터 있는 파일
+여기는 웹사이트에 모든 css를 적용하고 싶다면 사용*/
+

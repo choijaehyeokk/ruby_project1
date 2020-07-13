@@ -1,32 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>my service</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 	</head>
 	<body>
-		<h1>
-			<p style="text-align:center;"><%= @title%></p>
-		</h1>
-		<p>
-			<p style="text-align:center;">항공대 학생들을 위한 개발 커뮤니티</p>
-			<p style="text-align:right;"><%= @login%>&nbsp<%= @signin%></p>
-		</p>
+			<div class="d-flex justify-content-center">
+				<div class="d-flex flex-column justify-content-center">
+					<h1 class="text-center"><%= @title%></h1>
+					<p class="text-center">항공대 학생들을 위한 개발 커뮤니티</p>
+				</div>
+			</div>
+		
+			<p style="text-align:right;">
+				<button class="login">
+					<a href="/login"><%= @login%></a>
+				</button>
+				<button class="sigin">
+					<a href="/signin"><%= @signin%></a>
+				</button>
+			</p>
 		<hr color = "black" size = '3' noshape>
+		<div class="dropdown">
+			<button class="dropbtn">Menu</button>
+				<div class="dropdown-content">
+				<a href="/">HOME</a>
+				<a href="/contents">Program Languages</a>
+				<a href="/contents">Chat</a>
+				<a href="/contents">Introduce</a>
+				</div>
+		</div>
 
-	
-		<form id='search_bar' method="get">
-			<input type='text' name="search" />
-			<input type="submit" />
+		<form class="form-inline d-flex justify-content-center md-form form-sm mb-3">
+			<input class="form-control form-control-lg mr-3 w-50" type="text" placeholder="Search" aria-label="Search">
+			<a href="#" class="search_icon"><i class="fas fa-search" aria-hidden='true'></i></a>
 		</form>
 
-		<div class="contents">
-			<a href=/contents><img class='logo_img' src="<%=asset_path 'python_logo.png'%>"/></a>
-			<a href=/contents><img class='logo_img' src="<%=asset_path 'C_logo.png'%>"/></a>
-			<a href=/contents><img class='logo_img' src="<%=asset_path 'Cpp_logo.png'%>"/></a>
-			<a href=/contents><img class='logo_img' src="<%=asset_path 'java_logo.png'%>"/></a>
-			<a href=/contents><img class='logo_img' src="<%=asset_path 'mathlab_logo.png'%>"/></a>
+		<div class="container-fluid w-75 h-100 contents border">
+			<a class="col" href=/contents><img class='logo_img ' src="<%=asset_path 'python_logo.png'%>"/></a>
+			<a class="col" href=/contents><img class='logo_img ' src="<%=asset_path 'C_logo.png'%>"/></a>
+			<a class="col" href=/contents><img class='logo_img ' src="<%=asset_path 'Cpp_logo.png'%>"/></a>
+			<a class="col" href=/contents><img class='logo_img ' src="<%=asset_path 'java_logo.png'%>"/></a>
+			<a class="col" href=/contents><img class='logo_img ' src="<%=asset_path 'mathlab_logo.png'%>"/></a>
 		</div>
-		
 	</body>
 </html>
 
