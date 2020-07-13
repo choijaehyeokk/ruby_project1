@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<h1>
+		로그인창
+	</h1>
+	<body>
+		<p>
+			<a href ="/"> 뒤로 돌아가기 </a>
+			<div>
+				유저 리스트:
+				<% @users.each do |u| %>
+        		<tr>
+            		 <td>성: <%= u.first_name %></td>
+            		 <td>이름: <%= u.last_name %></td>
+					 <td>email: <%= u.email %></td>	
+        		</tr>
+				<br>
+        		<% end %>
+			</div>
+			<form action="/success_login">
+				<input type = "text" id ='id' placeholder='아이디'>
+				<input type = "text" password = 'password' placeholder="비밀번호">
+				<input type = "submit">	
+			</form>			
+		</p>
+	</body>
+</html>

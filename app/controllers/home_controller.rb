@@ -5,8 +5,5 @@ class HomeController < ApplicationController
 		@login ="로그인"
 		@signin= "회원가입"
 	end	
-	def login
-	end
-	def sigin
-	end
+	
 end
