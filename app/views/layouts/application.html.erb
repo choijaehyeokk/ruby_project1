@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyFirstRubyproject</title>
+    <title>항개발</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,27 +10,61 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="w-100 h-100 bg-light">
-    <header>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+  <body class="w-100 h-100 ">
+    <header class="d-flex justify-content-between border-bottom bg-primary">
+      <nav class="d-flex navbar navbar-expand-lg navbar-dark">
+        <div class="dropdown">
+          <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="" src=<%=asset_path "falcon_silhouette.png"%> width="40" height="40"/>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+
+        <a class="navbar-brand text-white" href="#"><img class="mr-2" src=<%=asset_path "falcon_silhouette.png"%> width="40" height="40"/>항개발</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <div class='d-flex align-self-center mr-3'>
+        <form class="form-inline d-flex  md-form form-sm mr-2">
+          <input class="form-control mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+          <a href="#" class="search_icon"><i class="search_icn fas fa-search" aria-hidden="true"></i></a>
+        </form>
+        <button class="btn btn-default login">
+          <a class="text-white text-decoration-none" href="/login"><%= @login%></a>
+        </button>
+        <button class="btn btn-default signin">
+          <a class="text-white text-decoration-none" href="/signin"><%= @signin%></a>
+        </button>
+      </div>
+      
     </header>
 
     <%= yield %>
     <footer class='footer mt-5'>
-      <div class='ml-5 text-left text-white text-lg'><div class='footer_font pt-5'>항개발</div></div>
+      <div class='pt-4 pl-4 footer_font text-white'>항개발</div>
     </footer>
   </body>
   
