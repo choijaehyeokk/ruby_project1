@@ -1,4 +1,5 @@
 class ContentsController < ApplicationController
-  def contents
-  end
+    def contents
+        @APP_TITLE += "-CONTENTS"
+    end
 end

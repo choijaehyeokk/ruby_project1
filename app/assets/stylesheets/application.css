@@ -16,6 +16,34 @@
  *= require contents.css
  */
 
+a:link { color: black; text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+
+.search_icn {
+    color: skyblue;
+}
+.search_icn:hover { color: black; }
+
+button.login:hover {
+    background-color: skyblue;
+    border-color: skyblue;
+}
+
+button.signin:hover {
+    background-color: skyblue;
+    border-color: skyblue;
+}
+
+.footer {
+    width: 100%;
+    height: 120px; /* Set the fixed height of the footer here */
+    background-color: #3f3f3f;
+}
+
+.footer_font {
+    font-size: 2.5rem;
+}
+
 /*레일즈를 만들면 처음부터 있는 파일
 여기는 웹사이트에 모든 css를 적용하고 싶다면 사용*/
 
