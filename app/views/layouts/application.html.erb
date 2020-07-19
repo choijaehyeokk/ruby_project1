@@ -21,94 +21,91 @@
             }
         </style>
     </head>
-
     <body class="w-100 h-100 ">
-    <header class="bg-primary">
-        <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
-            <a class="navbar-brand text-white" href="/">
-                <img class="mr-2" src=<%=asset_path "falcon_silhouette.png"%> width="35" height="35"/>항개발
-            </a>
-            
-            <div class="d-flex ml-auto ">
-                <button class="btn btn-sm btn-light login-sm mr-1">
-                <a class="text-primary text-decoration-none" href="/login">로그인</a>
-                </button>
-                <button class="btn btn-sm btn-light signin-sm mx-1">
-                <a class="text-primary text-decoration-none" href="/signin">회원가입</a>
-                </button>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">소개</a>
+        <header class="bg-primary">
+            <nav class="navbar navbar-expand-lg  navbar-dark bg-primary">
+                <a class="navbar-brand text-white" href="/">
+                    <img class="mr-2" src=<%=asset_path "falcon_silhouette.png"%> width="35" height="35"/>항개발
+                </a>
+                
+                <div class="d-flex  ml-auto ">
+                    <a class="login-sm mr-1 align-self-center" href="/login">
+                        <button class="text-primary text-decoration-none btn btn-sm btn-light">로그인</button>
+                    </a>
+                    <a class="signin-sm mx-1 align-self-center" href="/signin">
+                        <button class="text-primary text-decoration-none btn btn-sm btn-light ">회원가입</button>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">소개</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="collapse" href="#languages-map">언어</a>
+                            <div class="languages-map-sm collapse" id="languages-map">
+                                <ul class="nav nav-pills justify-content-between bg-white px-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-primary" href="/contents">C</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-primary" href="/contents">C++</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-primary" href="/contents">Java</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-primary" href="/contents">Matlab</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-primary" href="/contents">Python</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">자유질문</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex">
+                    <a class="login-lg mr-1" href="/login">
+                        <button class="text-primary text-decoration-none btn btn-sm btn-light">로그인</button>
+                    </a>
+                    <a class="signin-lg mx-1" href="/signin">
+                        <button class="text-primary text-decoration-none btn btn-sm btn-light">회원가입</button>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="languages-map-lg collapse bg-white pl-5" id="languages-map">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="/contents">C</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="collapse" href="#languages-map">언어</a>
-                        <div class="languages-map-sm collapse" id="languages-map">
-                            <ul class="nav nav-pills justify-content-between bg-white px-3">
-                                <li class="nav-item">
-                                    <a class="nav-link text-primary" href="/contents">C</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-primary" href="/contents">C++</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-primary" href="/contents">Java</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-primary" href="/contents">Matlab</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-primary" href="/contents">Python</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <a class="nav-link text-primary" href="/contents">C++</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">질문</a>
+                        <a class="nav-link text-primary" href="/contents">Java</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="/contents">Matlab</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="/contents">Python</a>
                     </li>
                 </ul>
             </div>
-            <div class="d-flex">
-                <button class="btn btn-sm btn-light login-lg mr-sm-1">
-                    <a class="text-primary text-decoration-none" href="/login">로그인</a>
-                </button>
-                <button class="btn btn-sm btn-light signin-lg mx-sm-1">
-                    <a class="text-primary text-decoration-none" href="/signin">회원가입</a>
-                </button>
-            </div>
-        </nav>
+        </header>
 
-        <div class="languages-map-lg collapse bg-white pl-5" id="languages-map">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="/contents">C</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/contents">C++</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/contents">Java</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/contents">Matlab</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="/contents">Python</a>
-                </li>
-            </ul>
-        </div>
-        
-    </header>
+        <%= yield %>
 
-
-    <%= yield %>
-    <footer class='footer mt-5'>
-        <div class='pt-4 pl-4 footer_font text-white'>항개발</div>
-    </footer>
+        <footer class='footer mt-5'>
+            <div class='pt-4 pl-4 footer_font text-white'>항개발</div>
+        </footer>
     </body>
-
 </html>

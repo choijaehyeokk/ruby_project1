@@ -8,18 +8,6 @@
 			<div style="text-align: right">
 			<a href ="/" class="btn btn-primary"> 뒤로 돌아가기 </a>
 			</div>
-			<div align="left">
-				유저 리스트: <br>
-				<% @users.each do |u| %>
-        		<tr>
-					 <td><%= u.id %>번: </td>
-            		 <td>성: <%= u.first_name %></td>
-            		 <td>이름: <%= u.last_name %></td>
-					 <td>email: <%= u.email %></td>	
-        		</tr>
-				<br>
-        		<% end %>
-			</div><br><br>
 			<form action="/success_login" align="center">
 				<input type = "text" id ='id' placeholder='아이디'>
 				<input type = "text" password = 'password' placeholder="비밀번호">
