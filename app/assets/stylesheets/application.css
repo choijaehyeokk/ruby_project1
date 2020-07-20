@@ -44,6 +44,22 @@ button.signin:hover {
     font-size: 2.5rem;
 }
 
+input.search.form-control {
+    padding: 0rem 0rem;
+}
+input.search.form-control:focus {
+    border-color: lightgrey;
+    box-shadow: none;
+}
+
+button.search-bar-sm:hover {
+    background-color: skyblue;
+}
+
+div.card-body {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 /*레일즈를 만들면 처음부터 있는 파일
 여기는 웹사이트에 모든 css를 적용하고 싶다면 사용*/
 

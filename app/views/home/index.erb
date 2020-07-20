@@ -10,55 +10,14 @@
 			</div>
 		</div>
 		<div class="row row-cols-4 row-cols-md-6 card-column justify-content-center w-100 h-100 contents m-0 m-auto">
-			<a class="col card logo_img" href=/contents>
-				<img class="card-img-top p-2" src="<%=asset_path "python_logo.png"%>"/>
-				<div class="card-body">
-					<h5 class="card-title"> Python </h5>
-				</div>
-			</a>
-			<a class="col card logo_img" href=/contents>
-				<img class="card-img-top p-2" src="<%=asset_path "c_logo.png"%>"/>
-				<div class="card-body">
-					<h5 class="card-title"> C </h5>
-				</div>
-			</a>
-			<a class="col card logo_img" href=/contents>
-				<img class="card-img-top p-2" src="<%=asset_path "cpp_logo.png"%>"/>
-				<div class="card-body">
-					<h5 class="card-title"> C++ </h5>
-				</div>
-			</a>
-			<a class="col card logo_img" href=/contents>
-				<img class="card-img-top p-2" src="<%=asset_path "java_logo.png"%>"/>
-				<div class="card-body">
-					<h5 class="card-title"> Java </h5>
-				</div>
-			</a>
-
-			<a class="col card logo_img" href=/contents>
-				<img class="card-img-top p-2" src="<%=asset_path "matlab_logo.png"%>"/>
-				<div class="card-body">
-					<h5 class="card-title"> Matlab </h5>
-				</div>
-			</a>
-			<a class="col card logo_img" href=/contents>
-				<img class="card-img-top p-2" src="<%=asset_path "python_logo.png"%>"/>
-				<div class="card-body">
-					<h5 class="card-title"> Python </h5>
-				</div>
-			</a>
-			<a class="col card logo_img" href=/contents>
-				<img class="card-img-top p-2" src="<%=asset_path "c_logo.png"%>"/>
-				<div class="card-body">
-					<h5 class="card-title"> C </h5>
-				</div>
-			</a>
-			<a class="col card logo_img" href=/contents>
-				<img class="card-img-top p-2" src="<%=asset_path "cpp_logo.png"%>"/>
-				<div class="card-body">
-					<h5 class="card-title"> C++ </h5>
-				</div>
-			</a>
+			<% @lang_name.each_with_index do |lang, i|%>
+				<a class="col card logo_img" href="<%="/contents/?name="+@lang_uri[i]%>">
+					<img class="card-img-top p-3" src="<%=asset_path @lang_extension[i]+"_logo.png"%>"/>
+					<div class="card-body">
+						<h5 class="card-title"><%=lang%></h5>
+					</div>
+				</a>
+			<% end %>
 		</div>
 	</body>
 </html>
