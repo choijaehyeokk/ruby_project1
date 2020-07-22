@@ -11,7 +11,7 @@
 		</div>
 		<div class="row row-cols-4 row-cols-md-6 card-column justify-content-center w-100 h-100 contents m-0 m-auto">
 			<% @lang_name.each_with_index do |lang, i|%>
-				<a class="col card logo_img" href="<%="/contents/?name="+@lang_uri[i]%>">
+				<a class="col card logo_img" href="<%="/contents/?index="+i.to_s%>">
 					<img class="card-img-top p-3" src="<%=asset_path @lang_extension[i]+"_logo.png"%>"/>
 					<div class="card-body">
 						<h5 class="card-title"><%=lang%></h5>

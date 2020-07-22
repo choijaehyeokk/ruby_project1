@@ -23,7 +23,7 @@
             }
         </style>
     </head>
-    <body class="w-100 h-100 ">
+    <body class="w-100 h-100">
         <header class="bg-primary">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <a class="navbar-brand text-white" href="/">
@@ -55,7 +55,7 @@
                                 <ul class="nav nav-pills justify-content-between bg-white px-3">
                                     <% @lang_name.each_with_index do |lang, i|%>
                                         <li class="nav-item">
-                                            <a class="nav-link text-primary" href="<%="/contents/?name="+@lang_uri[i]%>"><%=lang%></a>
+                                            <a class="nav-link text-primary" href="<%="/contents/?index="+i.to_s%>"><%=lang%></a>
                                         </li>
                                     <% end %>
                                 </ul>
@@ -82,7 +82,7 @@
                         <button class="align-self-center text-primary text-decoration-none btn btn-sm btn-light">회원가입</button>
                     </a>
                 </div>
-                <form class="collapse form-inline input-group my-2 my-lg-0 w-100" id="search-bar_collapse" >
+                <form class="search-bar-sm collapse form-inline input-group my-2 my-lg-0 w-100" id="search-bar_collapse" >
                     <div class="input-group-prepend">
                         <div class="input-group-text bg-white border-right-0">
                             <i class="fas fa-search text-primary" aria-hidden="true"></i>
@@ -96,7 +96,7 @@
                 <ul class="nav">
                     <% @lang_name.each_with_index do |lang, i|%>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" href="<%="/contents/?name="+@lang_uri[i]%>"><%=lang%></a>
+                            <a class="nav-link text-primary" href="<%="/contents/?index="+i.to_s%>"><%=lang%></a>
                         </li>
                     <% end %>
                 </ul>
