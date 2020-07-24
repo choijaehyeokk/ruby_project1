@@ -1,5 +1,3 @@
-require 'uri'
-
 class ContentsController < ApplicationController
     def initialize()
         super()

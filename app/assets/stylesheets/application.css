@@ -12,8 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require home.css
- *= require contents.css
  */
 
 a:link { color: black; text-decoration: none;}
