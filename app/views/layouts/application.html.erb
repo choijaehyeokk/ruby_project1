@@ -52,7 +52,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" data-toggle="collapse" href="#languages-map">언어</a>
                             <div class="languages-map-sm collapse" id="languages-map">
-                                <ul class="nav nav-pills justify-content-between bg-white px-3">
+                                <ul class="nav nav-pills justify-content-between bg-light px-3">
                                     <% @lang_name.each_with_index do |lang, i|%>
                                         <li class="nav-item">
                                             <a class="nav-link text-primary" href="<%="/contents/?index="+i.to_s%>"><%=lang%></a>
@@ -92,7 +92,7 @@
                 </form>
             </nav>
 
-            <div class="languages-map-lg collapse bg-white pl-5" id="languages-map">
+            <div class="languages-map-lg collapse bg-light border-bottom border-primary pl-5" id="languages-map">
                 <ul class="nav">
                     <% @lang_name.each_with_index do |lang, i|%>
                         <li class="nav-item">
