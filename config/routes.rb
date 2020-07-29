@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 	
 	#'/'로 접속을 하면 home controller의 index action으로 작업을 하도록 만들어라.
 	get '/login' => 'users#login'
-	get '/contents' => 'contents#contents'
+	get '/contents/:langName' => 'contents#contents'
 	get '/signin' => 'signin#signin'
 	get '/success_login' => 'home#index2'
 	get '/home/create' =>'home#create'

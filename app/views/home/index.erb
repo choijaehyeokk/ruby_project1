@@ -9,13 +9,13 @@
 			<p class="lead text-dark font-weight-bold text-center">항공대 학생들을 위한 개발 커뮤니티</p>
 		</div>
 		<div class="row row-cols-4 row-cols-md-6 card-column justify-content-center w-100 h-100 contents m-0 m-auto">
-			<% @lang_name.each_with_index do |lang, i|%>
-				<a class="col card logo_img" href="<%="/contents/?index="+i.to_s%>">
-					<img class="card-img-top p-3" src="<%=asset_path @lang_extension[i]+"_logo.png"%>"/>
+			<% @languages.each do |lang|%>
+				<%= link_to "/contents/#{lang.langName}", class: "col card logo_img" do%>
+					<img class="card-img-top p-3" src="<%=asset_path lang.extension+"_logo.png"%>"/>
 					<div class="card-body">
-						<h5 class="card-title"><%=lang%></h5>
+						<h5 class="card-title"><%=lang.langName%></h5>
 					</div>
-				</a>
+				<% end %>
 			<% end %>
 		</div>
 	</body>

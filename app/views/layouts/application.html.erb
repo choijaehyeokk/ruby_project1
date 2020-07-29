@@ -23,8 +23,13 @@
         </style>
     </head>
     <body class="w-100 h-100 ">
-		<p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <!--<div class="alert alert-info alert-dismissible fade show m-0 fixed-top" role="alert">
+            <%= notice %><br><%= alert %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>-->
+		
         <header class="bg-primary">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <a class="navbar-brand text-white" href="/">
@@ -55,9 +60,9 @@
                             <a class="nav-link active" data-toggle="collapse" href="#languages-map">언어</a>
                             <div class="languages-map-sm collapse" id="languages-map">
                                 <ul class="nav nav-pills justify-content-between bg-light px-3">
-                                    <% @lang_name.each_with_index do |lang, i|%>
+                                    <% @languages.each do |lang|%>
                                         <li class="nav-item">
-                                            <a class="nav-link text-primary" href="<%="/contents/?index="+i.to_s%>"><%=lang%></a>
+                                            <%= link_to "#{lang.langName}", "/contents/#{lang.langName}", class: "nav-link text-primary"%>
                                         </li>
                                     <% end %>
                                 </ul>
@@ -78,7 +83,7 @@
                         <input class="search form-control mr-sm-2 border-left-0" type="search" placeholder="Search">
                     </form>
                     <% if current_user %>
-                        <%= link_to '로그아웃', new_user_session_path, method: :delete, class: "login-lg mx-1 my-0 my-auto text-primary text-decoration-none btn btn-sm btn-light"%>
+                        <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "login-lg mx-1 my-0 my-auto text-primary text-decoration-none btn btn-sm btn-light"%>
                     <% else %>
                         <%= link_to '로그인', new_user_session_path, class: "login-lg mx-1 my-0 my-auto text-primary text-decoration-none btn btn-sm btn-light"%>
                         <%= link_to '회원가입', new_user_registration_path, class: "signin-lg mx-1 my-0 my-auto align-self-center text-primary text-decoration-none btn btn-sm btn-light"%>
@@ -96,9 +101,9 @@
 
             <div class="languages-map-lg collapse bg-light border-bottom border-primary pl-5" id="languages-map">
                 <ul class="nav">
-                    <% @lang_name.each_with_index do |lang, i|%>
+                    <% @languages.each do |lang|%>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" href="<%="/contents/?index="+i.to_s%>"><%=lang%></a>
+                            <%= link_to "#{lang.langName}", "/contents/#{lang.langName}", class: "nav-link text-primary"%>
                         </li>
                     <% end %>
                 </ul>
