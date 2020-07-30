@@ -3,19 +3,31 @@
     <head>
         <%= stylesheet_link_tag "contents"%>
         <style>
-            @media (min-width: 992px) { 
-                
+            @media (min-width: 901px) { 
+                form#content-search {max-width: 24rem;}
+                #post-body {display: flex;}
+                #tags {height: 65rem; width: 25%;}
+                #post-list {width: 74%;}
             }
-            @media (max-width: 991.98px) {
-                
+            @media (max-width: 900.98px) {
+                form#content-search {max-width: 50%;}
+                #tags {height: 12rem;width: auto;}
+                #myTab {border: none; //background-color: #007bff; }
+                li.nav-item {  margin-left:auto; margin-right:auto;}
+                a.nav-link {border: none !important;}
+                a.nav-link.active {
+                    background-color: #007bff !important;
+                    color: white !important;
+                    border-radius: 7% !important;
+                }
             }
         </style>
     </head>
     <body>
         <div class="d-flex">
             <img width="100" height="100" class="p-3" src="<%=asset_path @lang.extension+"_logo.png"%>"/>
-            <h1 class="align-self-center mr-auto"><%=@lang.langName%></h1>
-            <form class="input-group w-25 my-0 my-auto">
+            <h1 class="align-self-center"><%=@lang.langName%></h1>
+            <form id="content-search" class="input-group ml-auto my-0 my-auto align-self-end">
                 <div class="input-group-prepend ">
                     <div class="input-group-text bg-white border-right-0">
                         <i class="fas fa-search text-primary" aria-hidden="true"></i>
@@ -30,25 +42,25 @@
         <div class="jumbotron jumbotron-fluid" id="descriptor">
             <p class="display-4 text-dark text-center">다양한 게시글에서 원하시는 정보를 찾아보세요.</p>
         </div>
-        <ul class="nav nav-tabs mx-1" id="myTab" role="tablist">
+        <ul class="nav nav-tabs m-1 " id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="code-tab" data-toggle="tab" href="#code" role="tab" aria-controls="code" aria-selected="true">코드질문</a>
+                <a class="nav-link active text-primary" id="code-tab" data-toggle="tab" href="#code" role="tab" aria-controls="code" aria-selected="true">코드질문</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="study-tab" data-toggle="tab" href="#study" role="tab" aria-controls="study" aria-selected="false">공부방</a>
+                <a class="nav-link text-primary" id="study-tab" data-toggle="tab" href="#study" role="tab" aria-controls="study" aria-selected="false">공부방</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="question-tab" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="false">Q&A</a>
+                <a class="nav-link text-primary" id="question-tab" data-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="false">Q&A</a>
             </li>
         </ul>
         <div class="tab-content" id="primaryTabContents">
-            <div class="tab-pane fade show active container-fluid" id="code" role="tabpanel" aria-labelledby="code-tab">
+            <div class="tab-pane fade show active" id="code" role="tabpanel" aria-labelledby="code-tab">
                 <%= render 'contents/postList'%>
             </div>
-            <div class="tab-pane fade container-fluid" id="study" role="tabpanel" aria-labelledby="study-tab">
+            <div class="tab-pane fade" id="study" role="tabpanel" aria-labelledby="study-tab">
                 ...제작중
             </div>
-            <div class="tab-pane fade container-fluid" id="question" role="tabpanel" aria-labelledby="question-tab">
+            <div class="tab-pane fade" id="question" role="tabpanel" aria-labelledby="question-tab">
                 ...제작중
             </div>
         </div>

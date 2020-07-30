@@ -1,5 +1,5 @@
-<div  class="row">
-    <div id="tags" class="col-3 m-0 m-auto overflow-auto" style="height: 1100px;">
+<div id="post-body">
+    <div id="tags" class="mx-3 overflow-auto">
         <%@testTag = ["#tag","#tagEx","#tagExample","#isittag?","#hah!"]%>
         <%for i in (0...100)%>
             <button class="btn btn-sm btn-outline-primary m-2" style="box-shadow: none;" data-toggle="button" aria-pressed="false">
@@ -7,27 +7,26 @@
             </button>
         <%end%>
     </div>
-    <div class="col-9 border-left">
+    <div id="post-list" class="p-3">
         <div class="row row-cols-1 justify-content-center w-100 m-0 m-auto">
             <% for i in (0...5)%>
-                <a class="col card m-2 border-primary" href="#" >
-                    <div class="row no-gutters">
-                        <div class="col-2 m-0 m-auto">
+                <a class="col card border-primary m-2 px-3" href="#" >
+                    <div class="row">
+                        <div class="col-3 col-md-2 m-0 m-auto" style="max-width: 8rem;">
                             <div id="like" class="border border-primary rounded text-primary text-center w-75 mx-0 mx-auto mb-4"><%=Random.rand(0...10)%><br><span>like</span></div>
                             <div id="answer-num" class="border border-primary rounded text-primary text-center w-75 mx-0 mx-auto mt-4"><%=Random.rand(0...10)%><br><span>answer</span></div>
                         </div>
-                        <div id="post-content" class="col-10 card-body my-0 my-auto">
+                        <div id="post-content" class="col-9 col-md-10 card-body my-0 my-auto">
                             <div class="d-flex justify-content-between" >
-                                <h5 id="post-title" class="card-title text-primary">title</h5>
+                                <h3 id="post-title" class="card-title text-primary">title</h3>
                                 <div id="post-user-info" class="text-primary">username</div>
                             </div>
-                            <p id="post-primary" class="card-text text-primary"> [content]<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sollicitudin tempor id eu.</p>
-                            <div id="tags" class="" >
+                            <p id="post-primary" class="card-text overflow-hidden text-primary w-100" style="height: 3rem; text-overflow: ellipsis; white-space: nowrap;"> [content]<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam sollicitudin tempor id eu.</p>
+                            <div id="post-tags" class="">
                                 <% for i in (0...Random.rand(0...10)) %>
-                                    <button class="btn btn-sm btn-primary text-white rounded-pill">#tag</button>
+                                    <button class="btn btn-sm btn-primary text-white rounded-pill m-1">#tag</button>
                                 <% end %>
                             </div>
-                            
                         </div>
                     </div>
                 </a>
