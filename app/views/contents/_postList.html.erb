@@ -10,7 +10,7 @@
     <div id="post-list" class="p-3">
         <div class="row row-cols-1 justify-content-center w-100 m-0 m-auto">
             <% for i in (0...5)%>
-                <a class="col card border-primary m-2 px-3" href="#" >
+                <%= link_to "#", class: "col card border-primary m-2 px-3" do%>
                     <div class="row">
                         <div class="col-3 col-md-2 m-0 m-auto" style="max-width: 8rem;">
                             <div id="like" class="border border-primary rounded text-primary text-center w-75 mx-0 mx-auto mb-4"><%=Random.rand(0...10)%><br><span>like</span></div>
@@ -29,22 +29,22 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                <% end %>
             <% end %>
         </div>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center mb-0 mt-4">
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
+                        <span class="text-primary" aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link text-primary" href="#">1</a></li>
+                <li class="page-item"><a class="page-link text-primary" href="#">2</a></li>
+                <li class="page-item"><a class="page-link text-primary" href="#">3</a></li>
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
+                        <span class="text-primary" aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
             </ul>

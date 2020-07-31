@@ -11,7 +11,7 @@
 		<div class="row row-cols-4 row-cols-sm-4 row-cols-md-6 card-column justify-content-center w-100 h-100 contents m-0 m-auto">
 			<% @languages.each do |lang|%>
 				<%= link_to "/contents/#{lang.langName}", class: "col card logo_img" do%>
-					<img class="card-img-top p-3" src="<%=asset_path lang.extension+"_logo.png"%>"/>
+					<%=image_tag "#{lang.extension}_logo.png", class: "card-img-top p-3"%>
 					<div class="card-body">
 						<h5 class="card-title"><%=lang.langName%></h5>
 					</div>

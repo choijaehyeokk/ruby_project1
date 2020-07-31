@@ -38,7 +38,7 @@
                 </a>
                 
                 <div class="d-flex ml-auto">
-                    <button class="search-bar-sm btn btn-outline-light border-0 rounded-circle my-0 my-auto mr-2" type="button" data-toggle="collapse" data-target="#search-bar_collapse" aria-controls="search-bar_collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="search-bar-sm btn btn-outline-light border-0 rounded-circle my-0 my-auto mr-2" type="button" data-toggle="collapse" data-target=".search-bar_collapse" aria-controls="search-bar_collapse" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-search text-light mx-n1" aria-hidden="true"></i>
                     </button>
                     <% if current_user %>
@@ -75,14 +75,14 @@
                     </ul>
                 </div>
                 <div class="d-flex w-100 justify-content-end">
-                    <form class="search-bar-lg form-inline input-group my-2 my-lg-0 w-50">
+                    <%= form_tag "#", method: "get", class: "search-bar-lg form-inline input-group my-2 my-lg-0 w-50" do%>
                         <div class="input-group-prepend">
                             <div class="input-group-text bg-white border-right-0">
                                 <i class="fas fa-search text-primary" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <input class="search form-control mr-sm-2 border-left-0" type="search" placeholder="Search">
-                    </form>
+                        <%= text_field_tag "outter-search", nil, placeholder: "Search", class: "search form-control mr-sm-2 border-left-0"%>
+                    <% end %>
                     <% if current_user %>
                         <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "login-lg mx-1 my-0 my-auto text-primary text-decoration-none btn btn-sm btn-light"%>
                     <% else %>
@@ -90,14 +90,14 @@
                         <%= link_to '회원가입', new_user_registration_path, class: "signin-lg mx-1 my-0 my-auto align-self-center text-primary text-decoration-none btn btn-sm btn-light"%>
                     <% end %>
                 </div>
-                <form class="search-bar-sm collapse form-inline input-group my-2 my-lg-0 w-100" id="search-bar_collapse" >
+                <%= form_tag "#", method: "get", class: "search-bar_collapse search-bar-sm collapse form-inline input-group my-2 my-lg-0 w-100" do%>
                     <div class="input-group-prepend">
                         <div class="input-group-text bg-white border-right-0">
                             <i class="fas fa-search text-primary" aria-hidden="true"></i>
                         </div>
                     </div>
-                    <input class="search form-control mr-sm-2 border-left-0" type="search" placeholder="Search">
-                </form>
+                    <%= text_field_tag "outter-search", nil, placeholder:"Search", class: "search form-control mr-sm-2 border-left-0"%>
+                <% end %>
             </nav>
 
             <div class="languages-map-lg collapse bg-light border-bottom border-primary pl-5" id="languages-map">

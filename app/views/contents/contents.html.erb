@@ -4,13 +4,13 @@
         <%= stylesheet_link_tag "contents"%>
         <style>
             @media (min-width: 901px) { 
-                form#content-search {max-width: 24rem;}
+                form.content-search {max-width: 24rem;}
                 #post-body {display: flex;}
                 #tags {height: 65rem; width: 25%;}
                 #post-list {width: 74%;}
             }
             @media (max-width: 900.98px) {
-                form#content-search {max-width: 50%;}
+                form.content-search {max-width: 50%;}
                 #tags {height: 12rem;width: auto;}
                 #myTab {border: none; //background-color: #007bff; }
                 li.nav-item {  margin-left:auto; margin-right:auto;}
@@ -25,16 +25,16 @@
     </head>
     <body>
         <div class="d-flex">
-            <img width="100" height="100" class="p-3" src="<%=asset_path @lang.extension+"_logo.png"%>"/>
+            <%= image_tag "#{@lang.extension}_logo.png", class: "p-3", style: "width:100px; height:100px;"%>
             <h1 class="align-self-center"><%=@lang.langName%></h1>
-            <form id="content-search" class="input-group ml-auto my-0 my-auto align-self-end">
+            <%= form_tag "#", method: "get", class: "content-search input-group ml-auto my-0 my-auto align-self-end" do%>
                 <div class="input-group-prepend ">
                     <div class="input-group-text bg-white border-right-0">
                         <i class="fas fa-search text-primary" aria-hidden="true"></i>
                     </div>
                 </div>
-                <input class="search form-control border-left-0 pl-n3 mr-3" type="search" placeholder="Search in Contents">
-            </form>
+                <%= text_field_tag "inner-search", nil, placeholder: "Search in #{@lang.langName}", class: "search form-control border-left-0 pl-n3 mr-3"%>
+            <% end %>
             <% if current_user %>
                 <button class="ml-3 mr-3 btn btn-default align-self-center bg-primary text-white">글쓰기</button>
             <% end %>
