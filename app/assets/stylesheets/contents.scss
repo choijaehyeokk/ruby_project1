@@ -12,3 +12,19 @@ input.search.form-control:focus {
 .jumbotron {
     background-image: none;//asset-url("kau.jpg");
 }
+/* width */
+#tags::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+#tags::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px lightgrey;
+    border-radius: 10px;
+}
+
+/* Handle */
+#tags::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+}
