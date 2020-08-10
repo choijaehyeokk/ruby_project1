@@ -1,0 +1,27 @@
+<% content_for :mediaquery do%>
+    @media (min-width: 901px) { 
+        #content-body {display: flex;}
+        #content-side {width: 25%;}
+        #tags {height: 32rem; width: 95%;}
+        #post-list {width: 74%;}
+    }
+    @media (max-width: 900.98px) {
+        #tags {height: 12rem;width: auto;}
+        #myTab {border: none;}
+        #myTab li.nav-item {margin-left:auto;margin-right:auto;}
+        a.nav-link {border: none !important;}
+        a.nav-link.active {
+            background-color: #007bff !important;
+            color: white !important;
+            border-radius: 50% !important;
+        }
+    }
+<% end %>
+
+<% content_for :upperbody do%>
+    <div class="d-flex">
+        <%= image_tag "#{@lang.extension}_logo.png", class: "p-3", style: "width:100px; height:100px;"%>
+        <h1 class="align-self-center"><%=@lang.langName%></h1>
+    </div>
+<% end %>
+<%= render template: "layouts/application" %>

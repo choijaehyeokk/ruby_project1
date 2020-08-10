@@ -10,13 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_120013) do
+ActiveRecord::Schema.define(version: 2020_08_10_194638) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "writer"
+    t.integer "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+  end
 
   create_table "languages", force: :cascade do |t|
     t.string "langName"
     t.string "extension"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "writer"
+    t.integer "like"
+    t.string "targetLanguage"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "post_id"
+    t.string "targetLanguage"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_tags_on_post_id"
   end
 
   create_table "users", force: :cascade do |t|

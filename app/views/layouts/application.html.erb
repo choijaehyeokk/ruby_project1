@@ -21,6 +21,7 @@
                 .languages-map-sm{display: block} .languages-map-lg{display: none}
                 .search-bar-sm{display: flex} .search-bar-lg{display: none}
             }
+            <%= yield :mediaquery %>
         </style>
     </head>
     <body class="w-100 h-100 ">
@@ -81,7 +82,7 @@
                                 <i class="fas fa-search text-primary" aria-hidden="true"></i>
                             </div>
                         </div>
-                        <%= text_field_tag "outter-search", nil, placeholder: "Search", class: "search form-control mr-sm-2 border-left-0"%>
+                        <%= text_field_tag "outter-search-lg", nil, placeholder: "Search", class: "search form-control mr-sm-2 border-left-0"%>
                     <% end %>
                     <% if current_user %>
                         <%= link_to '로그아웃', destroy_user_session_path, method: :delete, class: "login-lg mx-1 my-0 my-auto text-primary text-decoration-none btn btn-sm btn-light"%>
@@ -96,7 +97,7 @@
                             <i class="fas fa-search text-primary" aria-hidden="true"></i>
                         </div>
                     </div>
-                    <%= text_field_tag "outter-search", nil, placeholder:"Search", class: "search form-control mr-sm-2 border-left-0"%>
+                    <%= text_field_tag "outter-search-sm", nil, placeholder:"Search", class: "search form-control mr-sm-2 border-left-0"%>
                 <% end %>
             </nav>
 
@@ -110,7 +111,7 @@
                 </ul>
             </div>
         </header>
-
+        <%= yield :upperbody %>
         <%= yield %>
 
         <footer class='footer mt-5'>

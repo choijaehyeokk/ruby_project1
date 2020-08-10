@@ -1,5 +1,5 @@
-<div id="post-body">
-    <div class="d-flex flex-column">
+<div id="content-body">
+    <div id="content-side" class="d-flex flex-column">
         <%= form_tag "#", method: "get", class: "content-search input-group mx-0 mx-auto my-1", style: "width: 93%;" do%>
             <div class="input-group-prepend ">
                 <div class="input-group-text bg-white border-right-0">
@@ -9,7 +9,7 @@
             <%= text_field_tag "inner-search", nil, placeholder: "Search in #{@lang.langName}", class: "search form-control border-left-0 pl-n3"%>
         <% end %>
         <% if current_user %>
-            <%= link_to "글쓰기", "#", class: "btn btn-primary text-white mx-0 mx-auto my-1", style: "width: 93%;"%>
+            <%= link_to "글쓰기", new_post_path, class: "btn btn-primary text-white mx-0 mx-auto my-1", style: "width: 93%;"%>
         <% end %>
         
         <div id="tags" class="mx-0 mx-auto overflow-auto">
@@ -20,11 +20,32 @@
                 </button>
             <%end%>
         </div>
-        
     </div>
     <div id="post-list" class="p-3">
         <div class="row row-cols-1 justify-content-center w-100 m-0 m-auto">
-            <% for i in (0...5)%>
+            <% @posts.each do |post|%>
+                <%= link_to post_path(@lang.langName,post.id), class: "col card border-primary m-2 px-3" do%>
+                    <div class="row">
+                        <div class="col-3 col-md-2 m-0 m-auto" style="max-width: 8rem;">
+                            <div id="like" class="border border-primary rounded text-primary text-center w-75 mx-0 mx-auto mb-4"><%=post.like%><br><span>like</span></div>
+                            <div id="answer-num" class="border border-primary rounded text-primary text-center w-75 mx-0 mx-auto mt-4"><%=post.comments.size%><br><span>answer</span></div>
+                        </div>
+                        <div id="post-content" class="col-9 col-md-10 card-body my-0 my-auto">
+                            <div class="d-flex justify-content-between" >
+                                <h3 id="post-title" class="card-title text-primary"><%=post.title%></h3>
+                                <div id="post-user-info" class="text-primary"><%=post.writer%></div>
+                            </div>
+                            <p id="post-primary" class="card-text overflow-hidden text-primary w-100" style="height: 3rem; text-overflow: ellipsis; white-space: nowrap;"><%=post.body%></p>
+                            <div id="post-tags" class="">
+                                <% for i in (0...Random.rand(0...10)) %>
+                                    <button class="btn btn-sm btn-primary text-white rounded-pill m-1">#tag</button>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+            <!--<% for i in (0...5)%>
                 <%= link_to "#", class: "col card border-primary m-2 px-3" do%>
                     <div class="row">
                         <div class="col-3 col-md-2 m-0 m-auto" style="max-width: 8rem;">
@@ -45,7 +66,7 @@
                         </div>
                     </div>
                 <% end %>
-            <% end %>
+            <% end %>-->
         </div>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center mb-0 mt-4">

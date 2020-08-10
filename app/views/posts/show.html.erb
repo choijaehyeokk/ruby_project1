@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @post.body %>
+</p>
+
+<p>
+  <strong>Writer:</strong>
+  <%= @post.writer %>
+</p>
+
+<p>
+  <strong>Like:</strong>
+  <%= @post.like %>
+</p>
+
+<p>
+  <strong>Targetlanguage:</strong>
+  <% @post.targetLanguage %>
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= @post.tags.map { |t| t.name }.join(", ") %>
+</p>
+
+<h2>Comments</h2>
+<%= render @post.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
+<%= link_to 'Edit', edit_post_path(@lang.langName, @post) %> |
+<%= link_to 'Back', posts_path(@lang.langName) %>

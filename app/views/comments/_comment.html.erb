@@ -1,0 +1,15 @@
+<p>
+    <b>title:</b>
+    <%= comment.title %>
+</p>
+<p>
+    <b>body:</b>
+    <%= comment.body %>
+</p>
+<p>
+    <b>writer:</b>
+    <%= comment.writer %>
+</p>
+<p>
+    <%= link_to 'Destroy Comment', post_comment_path(@lang.langName, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
